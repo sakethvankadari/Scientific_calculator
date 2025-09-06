@@ -4,11 +4,94 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Scientific Calculator</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-        <div class="calculator-header">
-        <h1 class="calculator-title">Advanced Scientific Calculator</h1>
+    <!-- Falling stars animation container -->
+    <div class="stars">
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
     </div>
+    
+    <div class="calculator-container">
+        <div class="calculator-header">
+            <h1 class="calculator-title">Cosmic Scientific Calculator</h1>
+        </div>
+        
+        <div class="calculator">
+            <div class="display-container">
+                <div class="display" id="display">0</div>
+                <div class="expression" id="expression"></div>
+            </div>
+            
+            <div class="buttons">
+                <!-- Row 1: Clear and Memory functions -->
+                <button class="btn function" onclick="clearAll()">C</button>
+                <button class="btn function" onclick="clearEntry()">CE</button>
+                <button class="btn function" onclick="backspace()">⌫</button>
+                <button class="btn function" onclick="memoryStore()">MS</button>
+                <button class="btn function" onclick="memoryRecall()">MR</button>
+                
+                <!-- Row 2: Scientific functions -->
+                <button class="btn scientific" onclick="scientificFunction('sin')">sin</button>
+                <button class="btn scientific" onclick="scientificFunction('cos')">cos</button>
+                <button class="btn scientific" onclick="scientificFunction('tan')">tan</button>
+                <button class="btn scientific" onclick="scientificFunction('log')">log</button>
+                <button class="btn scientific" onclick="scientificFunction('ln')">ln</button>
+                
+                <!-- Row 3: More scientific functions -->
+                <button class="btn scientific" onclick="scientificFunction('asin')">sin⁻¹</button>
+                <button class="btn scientific" onclick="scientificFunction('acos')">cos⁻¹</button>
+                <button class="btn scientific" onclick="scientificFunction('atan')">tan⁻¹</button>
+                <button class="btn scientific" onclick="scientificFunction('sqrt')">√</button>
+                <button class="btn scientific" onclick="scientificFunction('pow')">x²</button>
+                
+                <!-- Row 4: Numbers and basic operations -->
+                <button class="btn number" onclick="appendToDisplay('7')">7</button>
+                <button class="btn number" onclick="appendToDisplay('8')">8</button>
+                <button class="btn number" onclick="appendToDisplay('9')">9</button>
+                <button class="btn operator" onclick="appendToDisplay('/')">/</button>
+                <button class="btn scientific" onclick="scientificFunction('factorial')">n!</button>
+                
+                <!-- Row 5 -->
+                <button class="btn number" onclick="appendToDisplay('4')">4</button>
+                <button class="btn number" onclick="appendToDisplay('5')">5</button>
+                <button class="btn number" onclick="appendToDisplay('6')">6</button>
+                <button class="btn operator" onclick="appendToDisplay('*')">×</button>
+                <button class="btn scientific" onclick="scientificFunction('exp')">eˣ</button>
+                
+                <!-- Row 6 -->
+                <button class="btn number" onclick="appendToDisplay('1')">1</button>
+                <button class="btn number" onclick="appendToDisplay('2')">2</button>
+                <button class="btn number" onclick="appendToDisplay('3')">3</button>
+                <button class="btn operator" onclick="appendToDisplay('-')">-</button>
+                <button class="btn scientific" onclick="scientificFunction('pow10')">10ˣ</button>
+                
+                <!-- Row 7 -->
+                <button class="btn number" onclick="appendToDisplay('0')">0</button>
+                <button class="btn number" onclick="appendToDisplay('.')">.</button>
+                <button class="btn scientific" onclick="scientificFunction('pi')">π</button>
+                <button class="btn operator" onclick="appendToDisplay('+')">+</button>
+                <button class="btn equals" onclick="calculate()">=</button>
+                
+                <!-- Row 8: Additional functions -->
+                <button class="btn scientific" onclick="scientificFunction('abs')">|x|</button>
+                <button class="btn scientific" onclick="scientificFunction('floor')">⌊x⌋</button>
+                <button class="btn scientific" onclick="scientificFunction('ceil')">⌈x⌉</button>
+                <button class="btn scientific" onclick="scientificFunction('random')">rand</button>
+                <button class="btn scientific" onclick="scientificFunction('mod')">mod</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/calculator.js"></script>
 </body>
